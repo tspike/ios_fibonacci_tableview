@@ -32,8 +32,8 @@ unsigned int const MAX_FIBONACCI_N = 173;
     [super viewDidLoad];
     self.cellReuseIdentifier = @"com.tspike.fibonaccicell";
     
-    self.fibonacciCalculator = [[MemoryOptimizedFibonacciCalculator alloc] init];
-//    self.fibonacciCalculator = [[CPUOptimizedFibonacciCalculator alloc] init];
+//    self.fibonacciCalculator = [[MemoryOptimizedFibonacciCalculator alloc] init];
+    self.fibonacciCalculator = [[CPUOptimizedFibonacciCalculator alloc] init];
 }
 
 - (void)didReceiveMemoryWarning {

@@ -12,12 +12,10 @@
 @end
 @implementation MemoryOptimizedFibonacciCalculator
 
-// This algorithm trades CPU cycles for memory usage. An alternative would be to
-// use the naive recursive algorithm with dynamic programming, but since we can run
-// this in a separate thread, I choose to reduce the memory footprint at the cost of
-// CPU use/battery life. Battery life only suffers when the user is actively using the
-// application, which is an established behavior with mobile phones and therefore consistent
-// with user expectations.
+// A memory-optimized implementation of calculating the nth fibonacci number.
+// By not storing previously completed values, we use less memory. This is mostly didactic
+// considering that the memory used by caching a few fibonacci numbers is dwarfed by the
+// footprint of the rest of the app and UI views.
 - (NSDecimalNumber*)nthFibonacciNumber:(NSInteger)n {
     NSDecimalNumber *a = [[NSDecimalNumber alloc] initWithInt:1];
     NSDecimalNumber *b = [[NSDecimalNumber alloc] initWithInt:1];

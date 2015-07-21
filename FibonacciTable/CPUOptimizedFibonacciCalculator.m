@@ -23,6 +23,8 @@
     return self;
 }
 
+// A CPU-optimized implementation of calculating the Nth fibonacci number. By storing previously computed values,
+// we trade a little space usage for not recomputing previous values. This is the saner implementation for this app.
 - (NSDecimalNumber*)nthFibonacciNumber:(NSInteger)n {
     if (n == 0 || n == 1) {
         return [[NSDecimalNumber alloc] initWithInt:1];
