@@ -40,6 +40,8 @@
     XCTAssertEqual([[calculator nthFibonacciNumber:2] intValue], 2, @"Pass");
     XCTAssertEqual([[calculator nthFibonacciNumber:3] intValue], 3, @"Pass");
     XCTAssertEqual([[calculator nthFibonacciNumber:4] intValue], 5, @"Pass");
+    XCTAssertEqual([[calculator nthFibonacciNumber:5] intValue], 8, @"Pass");
+    XCTAssertEqual([[calculator nthFibonacciNumber:6] intValue], 13, @"Pass");
 }
 
 - (void)testPerformanceExample {
