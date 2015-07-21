@@ -11,6 +11,6 @@
 
 @interface MemoryOptimizedFibonacciCalculator : NSObject <FibonacciCalculator>
 
-+ (NSDecimalNumber*)nthFibonacciNumber:(NSInteger)n;
+- (NSDecimalNumber*)nthFibonacciNumber:(NSInteger)n;
 
 @end

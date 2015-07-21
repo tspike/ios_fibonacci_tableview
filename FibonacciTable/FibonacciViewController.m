@@ -10,11 +10,10 @@
 #import "FibonacciCalculator.h"
 #import "MemoryOptimizedFibonacciCalculator.h"
 
-// This app is inspired by
 @interface FibonacciViewController ()
 
 @property NSString *cellReuseIdentifier;
-@property Class<FibonacciCalculator> fibonacciCalculator;
+@property NSObject<FibonacciCalculator> *fibonacciCalculator; // we have different implementations
 
 @end
 
@@ -24,8 +23,8 @@
     [super viewDidLoad];
     self.cellReuseIdentifier = @"com.tspike.fibonaccicell";
     
-    self.fibonacciCalculator = [MemoryOptimizedFibonacciCalculator class];
-//  self.fibonacciCalculator = [CPUOptimizedFibonacciCalculator class];
+    self.fibonacciCalculator = [[MemoryOptimizedFibonacciCalculator alloc] init];
+//  self.fibonacciCalculator = [[CPUOptimizedFibonacciCalculator alloc] init];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -52,7 +51,18 @@
         fibonacciCell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault
                                                reuseIdentifier:self.cellReuseIdentifier];
     }
-    fibonacciCell.textLabel.text = [[self.fibonacciCalculator nthFibonacciNumber:indexPath.row] description];
+    
+    // keep track of which row this is so we can check when the async call below completes
+    // that we still have a reference to the correct cell
+    fibonacciCell.tag = indexPath.row;
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        NSString *cellText = [[self.fibonacciCalculator nthFibonacciNumber:indexPath.row] description];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            if (fibonacciCell.tag == indexPath.row) {
+                fibonacciCell.textLabel.text = cellText;
+            }
+        });
+    });
     return fibonacciCell;
 }
 @end

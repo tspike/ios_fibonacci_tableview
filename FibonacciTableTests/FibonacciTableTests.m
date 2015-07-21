@@ -26,12 +26,13 @@
     [super tearDown];
 }
 
-- (void)testFibonacciCalculator {
-    XCTAssertEqual([[MemoryOptimizedFibonacciCalculator nthFibonacciNumber:0] intValue], 1, @"Pass");
-    XCTAssertEqual([[MemoryOptimizedFibonacciCalculator nthFibonacciNumber:1] intValue], 1, @"Pass");
-    XCTAssertEqual([[MemoryOptimizedFibonacciCalculator nthFibonacciNumber:2] intValue], 2, @"Pass");
-    XCTAssertEqual([[MemoryOptimizedFibonacciCalculator nthFibonacciNumber:3] intValue], 3, @"Pass");
-    XCTAssertEqual([[MemoryOptimizedFibonacciCalculator nthFibonacciNumber:4] intValue], 5, @"Pass");
+- (void)testMemoryOptimizedFibonacciCalculator {
+    MemoryOptimizedFibonacciCalculator *calculator = [[MemoryOptimizedFibonacciCalculator alloc] init];
+    XCTAssertEqual([[calculator nthFibonacciNumber:0] intValue], 1, @"Pass");
+    XCTAssertEqual([[calculator nthFibonacciNumber:1] intValue], 1, @"Pass");
+    XCTAssertEqual([[calculator nthFibonacciNumber:2] intValue], 2, @"Pass");
+    XCTAssertEqual([[calculator nthFibonacciNumber:3] intValue], 3, @"Pass");
+    XCTAssertEqual([[calculator nthFibonacciNumber:4] intValue], 5, @"Pass");
 }
 
 - (void)testPerformanceExample {

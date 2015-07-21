@@ -18,7 +18,7 @@
 // CPU use/battery life. Battery life only suffers when the user is actively using the
 // application, which is an established behavior with mobile phones and therefore consistent
 // with user expectations.
-+ (NSDecimalNumber*)nthFibonacciNumber:(NSInteger)n {
+- (NSDecimalNumber*)nthFibonacciNumber:(NSInteger)n {
     NSDecimalNumber *a = [[NSDecimalNumber alloc] initWithInt:1];
     NSDecimalNumber *b = [[NSDecimalNumber alloc] initWithInt:1];
     for (int i=3; i<=n+1; i++) {
