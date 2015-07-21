@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <XCTest/XCTest.h>
 #import "MemoryOptimizedFibonacciCalculator.h"
+#import "CPUOptimizedFibonacciCalculator.h"
 
 @interface FibonacciTableTests : XCTestCase
 
@@ -26,8 +27,14 @@
     [super tearDown];
 }
 
-- (void)testMemoryOptimizedFibonacciCalculator {
-    MemoryOptimizedFibonacciCalculator *calculator = [[MemoryOptimizedFibonacciCalculator alloc] init];
+- (void)testFibonacciCalculators {
+    MemoryOptimizedFibonacciCalculator *memoryOptimizedCalculator = [[MemoryOptimizedFibonacciCalculator alloc] init];
+    [self testFibonacciFor:memoryOptimizedCalculator];
+    CPUOptimizedFibonacciCalculator *cpuOptimizedCalculator = [[CPUOptimizedFibonacciCalculator alloc] init];
+    [self testFibonacciFor:cpuOptimizedCalculator];
+}
+
+- (void)testFibonacciFor:(NSObject<FibonacciCalculator>*)calculator {
     XCTAssertEqual([[calculator nthFibonacciNumber:0] intValue], 1, @"Pass");
     XCTAssertEqual([[calculator nthFibonacciNumber:1] intValue], 1, @"Pass");
     XCTAssertEqual([[calculator nthFibonacciNumber:2] intValue], 2, @"Pass");

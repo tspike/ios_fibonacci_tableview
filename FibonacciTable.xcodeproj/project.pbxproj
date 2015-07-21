@@ -15,6 +15,7 @@
 		28ADFA941B587D22006D866E /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28ADFA921B587D22006D866E /* LaunchScreen.xib */; };
 		28ADFAA01B587D22006D866E /* FibonacciTableTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 28ADFA9F1B587D22006D866E /* FibonacciTableTests.m */; };
 		28ADFAAA1B5DA246006D866E /* MemoryOptimizedFibonacciCalculator.m in Sources */ = {isa = PBXBuildFile; fileRef = 28ADFAA91B5DA246006D866E /* MemoryOptimizedFibonacciCalculator.m */; };
+		28E285A31B5DD57E008389D5 /* CPUOptimizedFibonacciCalculator.m in Sources */ = {isa = PBXBuildFile; fileRef = 28E285A21B5DD57E008389D5 /* CPUOptimizedFibonacciCalculator.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +45,8 @@
 		28ADFAA91B5DA246006D866E /* MemoryOptimizedFibonacciCalculator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MemoryOptimizedFibonacciCalculator.m; sourceTree = "<group>"; };
 		28ADFAAB1B5DA256006D866E /* MemoryOptimizedFibonacciCalculator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MemoryOptimizedFibonacciCalculator.h; sourceTree = "<group>"; };
 		28E2859F1B5DC3D4008389D5 /* FibonacciCalculator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FibonacciCalculator.h; sourceTree = "<group>"; };
+		28E285A11B5DD525008389D5 /* CPUOptimizedFibonacciCalculator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CPUOptimizedFibonacciCalculator.h; sourceTree = "<group>"; };
+		28E285A21B5DD57E008389D5 /* CPUOptimizedFibonacciCalculator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CPUOptimizedFibonacciCalculator.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +133,8 @@
 				28E2859F1B5DC3D4008389D5 /* FibonacciCalculator.h */,
 				28ADFAAB1B5DA256006D866E /* MemoryOptimizedFibonacciCalculator.h */,
 				28ADFAA91B5DA246006D866E /* MemoryOptimizedFibonacciCalculator.m */,
+				28E285A11B5DD525008389D5 /* CPUOptimizedFibonacciCalculator.h */,
+				28E285A21B5DD57E008389D5 /* CPUOptimizedFibonacciCalculator.m */,
 			);
 			name = FibonacciCalculator;
 			sourceTree = "<group>";
@@ -238,6 +243,7 @@
 				28ADFA8C1B587D22006D866E /* FibonacciViewController.m in Sources */,
 				28ADFA891B587D22006D866E /* AppDelegate.m in Sources */,
 				28ADFA861B587D22006D866E /* main.m in Sources */,
+				28E285A31B5DD57E008389D5 /* CPUOptimizedFibonacciCalculator.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

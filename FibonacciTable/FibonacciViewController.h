@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+extern unsigned int const MAX_FIBONACCI_N;
+
 @interface FibonacciViewController : UITableViewController <UITableViewDataSource, UITableViewDelegate>
 
 
