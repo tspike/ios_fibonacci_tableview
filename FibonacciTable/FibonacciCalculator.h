@@ -9,5 +9,7 @@
 #import <Foundation/Foundation.h>
 
 @protocol FibonacciCalculator <NSObject>
+
 - (NSDecimalNumber*)nthFibonacciNumber:(NSInteger)n;
+
 @end

@@ -41,14 +41,8 @@
     XCTAssertEqual([[calculator nthFibonacciNumber:3] intValue], 3, @"Pass");
     XCTAssertEqual([[calculator nthFibonacciNumber:4] intValue], 5, @"Pass");
     XCTAssertEqual([[calculator nthFibonacciNumber:5] intValue], 8, @"Pass");
-    XCTAssertEqual([[calculator nthFibonacciNumber:6] intValue], 13, @"Pass");
-}
-
-- (void)testPerformanceExample {
-    // This is an example of a performance test case.
-    [self measureBlock:^{
-        // Put the code you want to measure the time of here.
-    }];
+    
+    XCTAssertEqual([[calculator nthFibonacciNumber:49] longLongValue], 12586269025, @"Pass");
 }
 
 @end
